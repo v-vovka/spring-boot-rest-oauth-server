@@ -3,8 +3,6 @@ package com.tas.app.controller;
 import com.tas.app.model.Customer;
 import com.tas.app.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,13 +33,6 @@ public class CustomerController {
     public void create(@Validated @RequestBody Customer customer) {
         service.save(customer);
     }
-
-    /*@RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity create(@Validated @RequestBody Customer customer) {
-        Long savedId = service.save(customer);
-        return ResponseEntity
-                .status(HttpStatus.CREATED).body("id: " + savedId);
-    }*/
 
     @RequestMapping(value = "/{customerId}", method = RequestMethod.PUT)
     public void update(@Validated @RequestBody Customer customer, @PathVariable Long customerId) {
