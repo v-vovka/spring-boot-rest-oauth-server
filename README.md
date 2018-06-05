@@ -5,3 +5,5 @@ The Spring Boot Maven plugin includes a run goal that can be used to quickly com
 $ mvn spring-boot:run
 
 application will started on 8080 port.
+
+Swagger UI available on http://localhost:8080/swagger-ui.html
